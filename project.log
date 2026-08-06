@@ -443,3 +443,373 @@ dtype: int64
 2026-08-06 11:55:11 | INFO | M06 | Training RandomForestClassifier on 273 instances
 2026-08-06 11:55:12 | INFO | M06 | Training complete
 2026-08-06 11:55:12 | INFO | M06 | Saved model to: C:\Users\ajh36\AppData\Local\Temp\pytest-of-ajh36\pytest-9\test_save_model_reloadable0\model.joblib
+2026-08-06 12:23:55 | INFO | M06 | === RUN START ===
+2026-08-06 12:23:55 | INFO | M06 | project=M06
+2026-08-06 12:23:55 | INFO | M06 | repo_dir=ml-06-serving
+2026-08-06 12:23:55 | INFO | M06 | python=3.14.0
+2026-08-06 12:23:55 | INFO | M06 | os=Windows 11
+2026-08-06 12:23:55 | INFO | M06 | shell=powershell
+2026-08-06 12:23:55 | INFO | M06 | cwd=.
+2026-08-06 12:23:55 | INFO | M06 | github_actions=False
+2026-08-06 12:23:55 | INFO | M06 | Loading model from: artifacts\model.joblib
+2026-08-06 12:23:55 | INFO | M06 | Model loaded successfully
+2026-08-06 12:23:55 | INFO | M06 | Predicted label: Adelie for features: [39.1, 18.7, 181.0, 3750.0]
+2026-08-06 12:26:19 | INFO | M06 | === RUN START ===
+2026-08-06 12:26:19 | INFO | M06 | project=M06
+2026-08-06 12:26:19 | INFO | M06 | repo_dir=ml-06-serving
+2026-08-06 12:26:19 | INFO | M06 | python=3.14.0
+2026-08-06 12:26:19 | INFO | M06 | os=Windows 11
+2026-08-06 12:26:19 | INFO | M06 | shell=powershell
+2026-08-06 12:26:19 | INFO | M06 | cwd=.
+2026-08-06 12:26:19 | INFO | M06 | github_actions=False
+2026-08-06 12:26:19 | INFO | M06 | Loading model from: artifacts\model.joblib
+2026-08-06 12:26:19 | INFO | M06 | Model loaded successfully
+2026-08-06 12:26:19 | INFO | M06 | Predicted label: Adelie for features: [39.1, 18.7, 181.0, 3750.0]
+2026-08-06 12:26:19 | ERROR | M06 | Unexpected prediction error
+Traceback (most recent call last):
+  File "C:\Repos\ml-06-serving\src\mlstudio\serve_alex.py", line 79, in predict
+    return predict_from_features(MODEL, payload)
+  File "C:\Repos\ml-06-serving\src\mlstudio\serve_alex.py", line 71, in predict_from_features
+    label: str = str(model.predict([features])[0])
+                     ~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Python314\Lib\unittest\mock.py", line 1175, in __call__
+    return self._mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\unittest\mock.py", line 1179, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\unittest\mock.py", line 1234, in _execute_mock_call
+    raise effect
+RuntimeError: boom
+2026-08-06 12:26:51 | INFO | M06 | === RUN START ===
+2026-08-06 12:26:51 | INFO | M06 | project=M06
+2026-08-06 12:26:51 | INFO | M06 | repo_dir=ml-06-serving
+2026-08-06 12:26:51 | INFO | M06 | python=3.14.0
+2026-08-06 12:26:51 | INFO | M06 | os=Windows 11
+2026-08-06 12:26:51 | INFO | M06 | shell=powershell
+2026-08-06 12:26:51 | INFO | M06 | cwd=.
+2026-08-06 12:26:51 | INFO | M06 | github_actions=False
+2026-08-06 12:26:51 | INFO | M06 | Loading model from: artifacts\model.joblib
+2026-08-06 12:26:51 | INFO | M06 | Model loaded successfully
+2026-08-06 12:26:51 | INFO | M06 | Predicted label: Adelie for features: [39.1, 18.7, 181.0, 3750.0]
+2026-08-06 12:26:51 | ERROR | M06 | Unexpected prediction error
+Traceback (most recent call last):
+  File "C:\Repos\ml-06-serving\src\mlstudio\serve_alex.py", line 79, in predict
+    return predict_from_features(MODEL, payload)
+  File "C:\Repos\ml-06-serving\src\mlstudio\serve_alex.py", line 71, in predict_from_features
+    label: str = str(model.predict([features])[0])
+                     ~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Python314\Lib\unittest\mock.py", line 1175, in __call__
+    return self._mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\unittest\mock.py", line 1179, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\unittest\mock.py", line 1234, in _execute_mock_call
+    raise effect
+RuntimeError: boom
+2026-08-06 12:28:18 | INFO | M06 | === RUN START ===
+2026-08-06 12:28:18 | INFO | M06 | project=M06
+2026-08-06 12:28:18 | INFO | M06 | repo_dir=ml-06-serving
+2026-08-06 12:28:18 | INFO | M06 | python=3.14.0
+2026-08-06 12:28:18 | INFO | M06 | os=Windows 11
+2026-08-06 12:28:18 | INFO | M06 | shell=powershell
+2026-08-06 12:28:18 | INFO | M06 | cwd=.
+2026-08-06 12:28:18 | INFO | M06 | github_actions=False
+2026-08-06 12:28:18 | INFO | M06 | Loading model from: artifacts\model.joblib
+2026-08-06 12:28:18 | INFO | M06 | Model loaded successfully
+2026-08-06 12:28:22 | INFO | M06 | === RUN START ===
+2026-08-06 12:28:22 | INFO | M06 | project=M06
+2026-08-06 12:28:22 | INFO | M06 | repo_dir=ml-06-serving
+2026-08-06 12:28:22 | INFO | M06 | python=3.14.0
+2026-08-06 12:28:22 | INFO | M06 | os=Windows 11
+2026-08-06 12:28:22 | INFO | M06 | shell=powershell
+2026-08-06 12:28:22 | INFO | M06 | cwd=.
+2026-08-06 12:28:22 | INFO | M06 | github_actions=False
+2026-08-06 12:28:22 | INFO | M06 | Loading model from: artifacts\model.joblib
+2026-08-06 12:28:23 | INFO | M06 | Model loaded successfully
+2026-08-06 12:29:22 | INFO | M06 | Predicted label: Adelie for features: [39.1, 18.7, 181.0, 3.0]
+2026-08-06 12:34:35 | INFO | M06 | === RUN START ===
+2026-08-06 12:34:35 | INFO | M06 | project=M06
+2026-08-06 12:34:35 | INFO | M06 | repo_dir=ml-06-serving
+2026-08-06 12:34:35 | INFO | M06 | python=3.14.0
+2026-08-06 12:34:35 | INFO | M06 | os=Windows 11
+2026-08-06 12:34:35 | INFO | M06 | shell=powershell
+2026-08-06 12:34:35 | INFO | M06 | cwd=.
+2026-08-06 12:34:35 | INFO | M06 | github_actions=False
+2026-08-06 12:34:35 | INFO | M06 | Loading model from: artifacts\model.joblib
+2026-08-06 12:34:35 | INFO | M06 | Model loaded successfully
+2026-08-06 12:34:39 | INFO | M06 | === RUN START ===
+2026-08-06 12:34:39 | INFO | M06 | project=M06
+2026-08-06 12:34:39 | INFO | M06 | repo_dir=ml-06-serving
+2026-08-06 12:34:39 | INFO | M06 | python=3.14.0
+2026-08-06 12:34:39 | INFO | M06 | os=Windows 11
+2026-08-06 12:34:39 | INFO | M06 | shell=powershell
+2026-08-06 12:34:40 | INFO | M06 | cwd=.
+2026-08-06 12:34:40 | INFO | M06 | github_actions=False
+2026-08-06 12:34:40 | INFO | M06 | Loading model from: artifacts\model.joblib
+2026-08-06 12:34:40 | INFO | M06 | Model loaded successfully
+2026-08-06 12:34:59 | INFO | M06 | Predicted probabilities: {'Adelie': 0.975, 'Chinstrap': 0.025, 'Gentoo': 0.0} for features: [39.1, 18.7, 181.0, 3.0]
+2026-08-06 12:34:59 | INFO | M06 | Predicted label: Adelie for features: [39.1, 18.7, 181.0, 3.0]
+2026-08-06 12:35:13 | INFO | M06 | Predicted probabilities: {'Adelie': 0.81, 'Chinstrap': 0.045, 'Gentoo': 0.145} for features: [39.1, 1.7, 181.0, 3.0]
+2026-08-06 12:35:13 | INFO | M06 | Predicted label: Adelie for features: [39.1, 1.7, 181.0, 3.0]
+2026-08-06 12:35:22 | INFO | M06 | Predicted probabilities: {'Adelie': 0.84, 'Chinstrap': 0.03, 'Gentoo': 0.13} for features: [3.1, 1.7, 181.0, 3.0]
+2026-08-06 12:35:22 | INFO | M06 | Predicted label: Adelie for features: [3.1, 1.7, 181.0, 3.0]
+2026-08-06 12:35:28 | INFO | M06 | Predicted probabilities: {'Adelie': 0.845, 'Chinstrap': 0.025, 'Gentoo': 0.13} for features: [3.1, 1.7, 18.0, 3.0]
+2026-08-06 12:35:28 | INFO | M06 | Predicted label: Adelie for features: [3.1, 1.7, 18.0, 3.0]
+2026-08-06 12:35:42 | INFO | M06 | Predicted probabilities: {'Adelie': 0.845, 'Chinstrap': 0.025, 'Gentoo': 0.13} for features: [33.1, 13.7, 18.0, 3.0]
+2026-08-06 12:35:42 | INFO | M06 | Predicted label: Adelie for features: [33.1, 13.7, 18.0, 3.0]
+2026-08-06 12:35:47 | INFO | M06 | Predicted probabilities: {'Adelie': 0.83, 'Chinstrap': 0.04, 'Gentoo': 0.13} for features: [33.1, 13.7, 189.0, 3.0]
+2026-08-06 12:35:47 | INFO | M06 | Predicted label: Adelie for features: [33.1, 13.7, 189.0, 3.0]
+2026-08-06 12:36:10 | INFO | M06 | Predicted probabilities: {'Adelie': 0.24, 'Chinstrap': 0.76, 'Gentoo': 0.0} for features: [83.1, 33.7, 89.0, 38.0]
+2026-08-06 12:36:10 | INFO | M06 | Predicted label: Chinstrap for features: [83.1, 33.7, 89.0, 38.0]
+2026-08-06 12:46:57 | INFO | ML | === RUN START ===
+2026-08-06 12:46:57 | INFO | ML | project=ML
+2026-08-06 12:46:57 | INFO | ML | repo_dir=ml-06-serving
+2026-08-06 12:46:57 | INFO | ML | python=3.14.0
+2026-08-06 12:46:57 | INFO | ML | os=Windows 11
+2026-08-06 12:46:57 | INFO | ML | shell=powershell
+2026-08-06 12:46:57 | INFO | ML | cwd=.
+2026-08-06 12:46:57 | INFO | ML | github_actions=False
+2026-08-06 12:46:57 | INFO | M06 | === RUN START ===
+2026-08-06 12:46:57 | INFO | M06 | project=M06
+2026-08-06 12:46:57 | INFO | M06 | repo_dir=ml-06-serving
+2026-08-06 12:46:57 | INFO | M06 | python=3.14.0
+2026-08-06 12:46:57 | INFO | M06 | os=Windows 11
+2026-08-06 12:46:57 | INFO | M06 | shell=powershell
+2026-08-06 12:46:57 | INFO | M06 | cwd=.
+2026-08-06 12:46:57 | INFO | M06 | github_actions=False
+2026-08-06 12:46:58 | INFO | M06 | === RUN START ===
+2026-08-06 12:46:58 | INFO | M06 | project=M06
+2026-08-06 12:46:58 | INFO | M06 | repo_dir=ml-06-serving
+2026-08-06 12:46:58 | INFO | M06 | python=3.14.0
+2026-08-06 12:46:58 | INFO | M06 | os=Windows 11
+2026-08-06 12:46:58 | INFO | M06 | shell=powershell
+2026-08-06 12:46:58 | INFO | M06 | cwd=.
+2026-08-06 12:46:58 | INFO | M06 | github_actions=False
+2026-08-06 12:46:58 | INFO | M06 | Loading model from: artifacts\model.joblib
+2026-08-06 12:46:58 | INFO | M06 | Model loaded successfully
+2026-08-06 12:46:58 | INFO | M06 | Loading dataset: penguins
+2026-08-06 12:46:58 | INFO | M06 | Loaded: 344 rows, 7 columns
+2026-08-06 12:46:58 | INFO | M06 | Model rows (after dropping missing): 342
+2026-08-06 12:46:58 | INFO | M06 | Loading dataset: penguins
+2026-08-06 12:46:58 | INFO | M06 | Loaded: 344 rows, 7 columns
+2026-08-06 12:46:58 | INFO | M06 | Model rows (after dropping missing): 342
+2026-08-06 12:46:58 | INFO | M06 | Loading dataset: penguins
+2026-08-06 12:46:58 | INFO | M06 | Loaded: 344 rows, 7 columns
+2026-08-06 12:46:58 | INFO | M06 | Model rows (after dropping missing): 342
+2026-08-06 12:46:58 | INFO | M06 | Loading dataset: penguins
+2026-08-06 12:46:58 | INFO | M06 | Loaded: 344 rows, 7 columns
+2026-08-06 12:46:58 | INFO | M06 | Model rows (after dropping missing): 342
+2026-08-06 12:46:58 | INFO | M06 | Train instances: 273
+2026-08-06 12:46:58 | INFO | M06 | Test instances:  69
+2026-08-06 12:46:58 | INFO | M06 | Loading dataset: penguins
+2026-08-06 12:46:58 | INFO | M06 | Loaded: 344 rows, 7 columns
+2026-08-06 12:46:58 | INFO | M06 | Model rows (after dropping missing): 342
+2026-08-06 12:46:58 | INFO | M06 | Train instances: 273
+2026-08-06 12:46:58 | INFO | M06 | Test instances:  69
+2026-08-06 12:46:58 | INFO | M06 | Loading dataset: penguins
+2026-08-06 12:46:58 | INFO | M06 | Loaded: 344 rows, 7 columns
+2026-08-06 12:46:58 | INFO | M06 | Model rows (after dropping missing): 342
+2026-08-06 12:46:58 | INFO | M06 | Train instances: 273
+2026-08-06 12:46:58 | INFO | M06 | Test instances:  69
+2026-08-06 12:46:58 | INFO | M06 | Loading dataset: penguins
+2026-08-06 12:46:58 | INFO | M06 | Loaded: 344 rows, 7 columns
+2026-08-06 12:46:58 | INFO | M06 | Model rows (after dropping missing): 342
+2026-08-06 12:46:58 | INFO | M06 | Train instances: 273
+2026-08-06 12:46:58 | INFO | M06 | Test instances:  69
+2026-08-06 12:46:58 | INFO | M06 | Loading dataset: penguins
+2026-08-06 12:46:58 | INFO | M06 | Loaded: 344 rows, 7 columns
+2026-08-06 12:46:58 | INFO | M06 | Model rows (after dropping missing): 342
+2026-08-06 12:46:58 | INFO | M06 | Train instances: 273
+2026-08-06 12:46:58 | INFO | M06 | Test instances:  69
+2026-08-06 12:46:58 | INFO | M06 | Training RandomForestClassifier on 273 instances
+2026-08-06 12:46:58 | INFO | M06 | Training complete
+2026-08-06 12:46:58 | INFO | M06 | Loading dataset: penguins
+2026-08-06 12:46:58 | INFO | M06 | Loaded: 344 rows, 7 columns
+2026-08-06 12:46:59 | INFO | M06 | Model rows (after dropping missing): 342
+2026-08-06 12:46:59 | INFO | M06 | Train instances: 273
+2026-08-06 12:46:59 | INFO | M06 | Test instances:  69
+2026-08-06 12:46:59 | INFO | M06 | Training RandomForestClassifier on 273 instances
+2026-08-06 12:46:59 | INFO | M06 | Training complete
+2026-08-06 12:46:59 | INFO | M06 | Loading dataset: penguins
+2026-08-06 12:46:59 | INFO | M06 | Loaded: 344 rows, 7 columns
+2026-08-06 12:46:59 | INFO | M06 | Model rows (after dropping missing): 342
+2026-08-06 12:46:59 | INFO | M06 | Train instances: 273
+2026-08-06 12:46:59 | INFO | M06 | Test instances:  69
+2026-08-06 12:46:59 | INFO | M06 | Training RandomForestClassifier on 273 instances
+2026-08-06 12:46:59 | INFO | M06 | Training complete
+2026-08-06 12:46:59 | INFO | M06 | Loading dataset: penguins
+2026-08-06 12:46:59 | INFO | M06 | Loaded: 344 rows, 7 columns
+2026-08-06 12:46:59 | INFO | M06 | Model rows (after dropping missing): 342
+2026-08-06 12:46:59 | INFO | M06 | Train instances: 273
+2026-08-06 12:46:59 | INFO | M06 | Test instances:  69
+2026-08-06 12:46:59 | INFO | M06 | Training RandomForestClassifier on 273 instances
+2026-08-06 12:47:00 | INFO | M06 | Training complete
+2026-08-06 12:47:00 | INFO | M06 | Test accuracy: 1.000
+2026-08-06 12:47:00 | INFO | M06 | Loading dataset: penguins
+2026-08-06 12:47:00 | INFO | M06 | Loaded: 344 rows, 7 columns
+2026-08-06 12:47:00 | INFO | M06 | Model rows (after dropping missing): 342
+2026-08-06 12:47:00 | INFO | M06 | Train instances: 273
+2026-08-06 12:47:00 | INFO | M06 | Test instances:  69
+2026-08-06 12:47:00 | INFO | M06 | Training RandomForestClassifier on 273 instances
+2026-08-06 12:47:00 | INFO | M06 | Training complete
+2026-08-06 12:47:00 | INFO | M06 | Loading dataset: penguins
+2026-08-06 12:47:00 | INFO | M06 | Loaded: 344 rows, 7 columns
+2026-08-06 12:47:00 | INFO | M06 | Model rows (after dropping missing): 342
+2026-08-06 12:47:00 | INFO | M06 | Train instances: 273
+2026-08-06 12:47:00 | INFO | M06 | Test instances:  69
+2026-08-06 12:47:00 | INFO | M06 | Training RandomForestClassifier on 273 instances
+2026-08-06 12:47:01 | INFO | M06 | Training complete
+2026-08-06 12:47:01 | INFO | M06 | Saved model to: C:\Users\ajh36\AppData\Local\Temp\pytest-of-ajh36\pytest-10\test_save_model_creates_file0\model.joblib
+2026-08-06 12:47:01 | INFO | M06 | Loading dataset: penguins
+2026-08-06 12:47:01 | INFO | M06 | Loaded: 344 rows, 7 columns
+2026-08-06 12:47:01 | INFO | M06 | Model rows (after dropping missing): 342
+2026-08-06 12:47:01 | INFO | M06 | Train instances: 273
+2026-08-06 12:47:01 | INFO | M06 | Test instances:  69
+2026-08-06 12:47:01 | INFO | M06 | Training RandomForestClassifier on 273 instances
+2026-08-06 12:47:01 | INFO | M06 | Training complete
+2026-08-06 12:47:01 | INFO | M06 | Saved model to: C:\Users\ajh36\AppData\Local\Temp\pytest-of-ajh36\pytest-10\test_save_model_reloadable0\model.joblib
+2026-08-06 12:47:01 | INFO | M06 | Predicted probabilities: {'Adelie': 0.995, 'Chinstrap': 0.005, 'Gentoo': 0.0} for features: [39.1, 18.7, 181.0, 3750.0]
+2026-08-06 12:47:01 | INFO | M06 | Predicted label: Adelie for features: [39.1, 18.7, 181.0, 3750.0]
+2026-08-06 12:47:01 | ERROR | M06 | Unexpected prediction error
+Traceback (most recent call last):
+  File "C:\Repos\ml-06-serving\src\mlstudio\serve_alex.py", line 88, in predict
+    return predict_from_features(MODEL, payload)
+  File "C:\Repos\ml-06-serving\src\mlstudio\serve_alex.py", line 71, in predict_from_features
+    label: str = str(model.predict([features])[0])
+                     ~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Python314\Lib\unittest\mock.py", line 1175, in __call__
+    return self._mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\unittest\mock.py", line 1179, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\unittest\mock.py", line 1234, in _execute_mock_call
+    raise effect
+RuntimeError: boom
+2026-08-06 12:54:11 | INFO | ML | === RUN START ===
+2026-08-06 12:54:11 | INFO | ML | project=ML
+2026-08-06 12:54:11 | INFO | ML | repo_dir=ml-06-serving
+2026-08-06 12:54:11 | INFO | ML | python=3.14.0
+2026-08-06 12:54:11 | INFO | ML | os=Windows 11
+2026-08-06 12:54:11 | INFO | ML | shell=powershell
+2026-08-06 12:54:11 | INFO | ML | cwd=.
+2026-08-06 12:54:11 | INFO | ML | github_actions=False
+2026-08-06 12:54:12 | INFO | M06 | === RUN START ===
+2026-08-06 12:54:12 | INFO | M06 | project=M06
+2026-08-06 12:54:12 | INFO | M06 | repo_dir=ml-06-serving
+2026-08-06 12:54:12 | INFO | M06 | python=3.14.0
+2026-08-06 12:54:12 | INFO | M06 | os=Windows 11
+2026-08-06 12:54:12 | INFO | M06 | shell=powershell
+2026-08-06 12:54:12 | INFO | M06 | cwd=.
+2026-08-06 12:54:12 | INFO | M06 | github_actions=False
+2026-08-06 12:54:12 | INFO | M06 | === RUN START ===
+2026-08-06 12:54:12 | INFO | M06 | project=M06
+2026-08-06 12:54:12 | INFO | M06 | repo_dir=ml-06-serving
+2026-08-06 12:54:12 | INFO | M06 | python=3.14.0
+2026-08-06 12:54:12 | INFO | M06 | os=Windows 11
+2026-08-06 12:54:12 | INFO | M06 | shell=powershell
+2026-08-06 12:54:12 | INFO | M06 | cwd=.
+2026-08-06 12:54:12 | INFO | M06 | github_actions=False
+2026-08-06 12:54:12 | INFO | M06 | Loading model from: artifacts\model.joblib
+2026-08-06 12:54:13 | INFO | M06 | Model loaded successfully
+2026-08-06 12:54:13 | INFO | M06 | Loading dataset: penguins
+2026-08-06 12:54:13 | INFO | M06 | Loaded: 344 rows, 7 columns
+2026-08-06 12:54:13 | INFO | M06 | Model rows (after dropping missing): 342
+2026-08-06 12:54:13 | INFO | M06 | Loading dataset: penguins
+2026-08-06 12:54:13 | INFO | M06 | Loaded: 344 rows, 7 columns
+2026-08-06 12:54:13 | INFO | M06 | Model rows (after dropping missing): 342
+2026-08-06 12:54:13 | INFO | M06 | Loading dataset: penguins
+2026-08-06 12:54:13 | INFO | M06 | Loaded: 344 rows, 7 columns
+2026-08-06 12:54:13 | INFO | M06 | Model rows (after dropping missing): 342
+2026-08-06 12:54:13 | INFO | M06 | Loading dataset: penguins
+2026-08-06 12:54:13 | INFO | M06 | Loaded: 344 rows, 7 columns
+2026-08-06 12:54:13 | INFO | M06 | Model rows (after dropping missing): 342
+2026-08-06 12:54:13 | INFO | M06 | Train instances: 273
+2026-08-06 12:54:13 | INFO | M06 | Test instances:  69
+2026-08-06 12:54:13 | INFO | M06 | Loading dataset: penguins
+2026-08-06 12:54:13 | INFO | M06 | Loaded: 344 rows, 7 columns
+2026-08-06 12:54:13 | INFO | M06 | Model rows (after dropping missing): 342
+2026-08-06 12:54:13 | INFO | M06 | Train instances: 273
+2026-08-06 12:54:13 | INFO | M06 | Test instances:  69
+2026-08-06 12:54:13 | INFO | M06 | Loading dataset: penguins
+2026-08-06 12:54:13 | INFO | M06 | Loaded: 344 rows, 7 columns
+2026-08-06 12:54:13 | INFO | M06 | Model rows (after dropping missing): 342
+2026-08-06 12:54:13 | INFO | M06 | Train instances: 273
+2026-08-06 12:54:13 | INFO | M06 | Test instances:  69
+2026-08-06 12:54:13 | INFO | M06 | Loading dataset: penguins
+2026-08-06 12:54:13 | INFO | M06 | Loaded: 344 rows, 7 columns
+2026-08-06 12:54:13 | INFO | M06 | Model rows (after dropping missing): 342
+2026-08-06 12:54:13 | INFO | M06 | Train instances: 273
+2026-08-06 12:54:13 | INFO | M06 | Test instances:  69
+2026-08-06 12:54:13 | INFO | M06 | Loading dataset: penguins
+2026-08-06 12:54:13 | INFO | M06 | Loaded: 344 rows, 7 columns
+2026-08-06 12:54:13 | INFO | M06 | Model rows (after dropping missing): 342
+2026-08-06 12:54:13 | INFO | M06 | Train instances: 273
+2026-08-06 12:54:13 | INFO | M06 | Test instances:  69
+2026-08-06 12:54:13 | INFO | M06 | Training RandomForestClassifier on 273 instances
+2026-08-06 12:54:13 | INFO | M06 | Training complete
+2026-08-06 12:54:13 | INFO | M06 | Loading dataset: penguins
+2026-08-06 12:54:13 | INFO | M06 | Loaded: 344 rows, 7 columns
+2026-08-06 12:54:13 | INFO | M06 | Model rows (after dropping missing): 342
+2026-08-06 12:54:13 | INFO | M06 | Train instances: 273
+2026-08-06 12:54:13 | INFO | M06 | Test instances:  69
+2026-08-06 12:54:13 | INFO | M06 | Training RandomForestClassifier on 273 instances
+2026-08-06 12:54:14 | INFO | M06 | Training complete
+2026-08-06 12:54:14 | INFO | M06 | Loading dataset: penguins
+2026-08-06 12:54:14 | INFO | M06 | Loaded: 344 rows, 7 columns
+2026-08-06 12:54:14 | INFO | M06 | Model rows (after dropping missing): 342
+2026-08-06 12:54:14 | INFO | M06 | Train instances: 273
+2026-08-06 12:54:14 | INFO | M06 | Test instances:  69
+2026-08-06 12:54:14 | INFO | M06 | Training RandomForestClassifier on 273 instances
+2026-08-06 12:54:14 | INFO | M06 | Training complete
+2026-08-06 12:54:14 | INFO | M06 | Loading dataset: penguins
+2026-08-06 12:54:14 | INFO | M06 | Loaded: 344 rows, 7 columns
+2026-08-06 12:54:14 | INFO | M06 | Model rows (after dropping missing): 342
+2026-08-06 12:54:14 | INFO | M06 | Train instances: 273
+2026-08-06 12:54:14 | INFO | M06 | Test instances:  69
+2026-08-06 12:54:14 | INFO | M06 | Training RandomForestClassifier on 273 instances
+2026-08-06 12:54:14 | INFO | M06 | Training complete
+2026-08-06 12:54:14 | INFO | M06 | Test accuracy: 1.000
+2026-08-06 12:54:14 | INFO | M06 | Loading dataset: penguins
+2026-08-06 12:54:14 | INFO | M06 | Loaded: 344 rows, 7 columns
+2026-08-06 12:54:14 | INFO | M06 | Model rows (after dropping missing): 342
+2026-08-06 12:54:14 | INFO | M06 | Train instances: 273
+2026-08-06 12:54:14 | INFO | M06 | Test instances:  69
+2026-08-06 12:54:14 | INFO | M06 | Training RandomForestClassifier on 273 instances
+2026-08-06 12:54:15 | INFO | M06 | Training complete
+2026-08-06 12:54:15 | INFO | M06 | Loading dataset: penguins
+2026-08-06 12:54:15 | INFO | M06 | Loaded: 344 rows, 7 columns
+2026-08-06 12:54:15 | INFO | M06 | Model rows (after dropping missing): 342
+2026-08-06 12:54:15 | INFO | M06 | Train instances: 273
+2026-08-06 12:54:15 | INFO | M06 | Test instances:  69
+2026-08-06 12:54:15 | INFO | M06 | Training RandomForestClassifier on 273 instances
+2026-08-06 12:54:15 | INFO | M06 | Training complete
+2026-08-06 12:54:15 | INFO | M06 | Saved model to: C:\Users\ajh36\AppData\Local\Temp\pytest-of-ajh36\pytest-11\test_save_model_creates_file0\model.joblib
+2026-08-06 12:54:15 | INFO | M06 | Loading dataset: penguins
+2026-08-06 12:54:15 | INFO | M06 | Loaded: 344 rows, 7 columns
+2026-08-06 12:54:15 | INFO | M06 | Model rows (after dropping missing): 342
+2026-08-06 12:54:15 | INFO | M06 | Train instances: 273
+2026-08-06 12:54:15 | INFO | M06 | Test instances:  69
+2026-08-06 12:54:15 | INFO | M06 | Training RandomForestClassifier on 273 instances
+2026-08-06 12:54:16 | INFO | M06 | Training complete
+2026-08-06 12:54:16 | INFO | M06 | Saved model to: C:\Users\ajh36\AppData\Local\Temp\pytest-of-ajh36\pytest-11\test_save_model_reloadable0\model.joblib
+2026-08-06 12:54:16 | INFO | M06 | Predicted probabilities: {'Adelie': 0.995, 'Chinstrap': 0.005, 'Gentoo': 0.0} for features: [39.1, 18.7, 181.0, 3750.0]
+2026-08-06 12:54:16 | INFO | M06 | Predicted label: Adelie for features: [39.1, 18.7, 181.0, 3750.0]
+2026-08-06 12:54:16 | ERROR | M06 | Unexpected prediction error
+Traceback (most recent call last):
+  File "C:\Repos\ml-06-serving\src\mlstudio\serve_alex.py", line 88, in predict
+    return predict_from_features(MODEL, payload)
+  File "C:\Repos\ml-06-serving\src\mlstudio\serve_alex.py", line 71, in predict_from_features
+    label: str = str(model.predict([features])[0])
+                     ~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Python314\Lib\unittest\mock.py", line 1175, in __call__
+    return self._mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\unittest\mock.py", line 1179, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\unittest\mock.py", line 1234, in _execute_mock_call
+    raise effect
+RuntimeError: boom

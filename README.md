@@ -62,7 +62,7 @@ then predict on every incoming request.
 ## Example Notebook
 Links:
 
-- [ml_06_case.ipynb](notebooks/ml_06_case.ipynb)
+- [ml_06_serve_model](notebooks/ml_06_serve_model.ipynb)
 
 
 

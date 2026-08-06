@@ -25,24 +25,11 @@ to get the example projects running on your machine.
 
 ## Deployment Options
 
-- [**HuggingFace**](./huggingface.md) - free, no CC required
 - [**Render**](./render.md) - free, easier, CC required
 
 ## Phase 4. Technical Modification
 
-Describe your small technical modification to the example project.
-
-Include:
-
-- What you changed
-- Why you chose that change
-- How you verified that it worked
-- What result, output, chart, metric, or behavior confirmed the change
-
-Compared with the example project,
-explain what is different and why the change matters.
-
-Was it easy, or surprisingly challenging and why do you think so?
+In phase 4 I made a fairly easy change, I wanted endpoint predictions to persist, so I added a logging statement to the API request, now the input features, and the prediction are logged.
 
 ## Phase 5. Custom Project
 

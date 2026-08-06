@@ -5,7 +5,7 @@ from pathlib import Path
 from typing import Any, Final
 
 from datafun_toolkit.logger import get_logger, log_header
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, status
 import joblib  # for serializing and deserializing the model
 from sklearn.ensemble import RandomForestClassifier
 
@@ -55,21 +55,45 @@ def predict_from_features(
     model: RandomForestClassifier, payload: dict[str, Any]
 ) -> dict[str, Any]:
     """Pure prediction function - testable outside the web framework."""
-    try:
-        features = [float(payload[c]) for c in FEATURE_COLS]
-    except KeyError as exc:
-        raise ValueError(f"Missing required feature: {exc}") from exc
-    except (TypeError, ValueError) as exc:
-        raise ValueError(f"Invalid feature value: {exc}") from exc
+    missing_features = [column for column in FEATURE_COLS if column not in payload]
+    if missing_features:
+        missing = ", ".join(missing_features)
+        raise ValueError(f"Missing required feature: {missing}")
+
+    features: list[float] = []
+    for column in FEATURE_COLS:
+        value = payload[column]
+        try:
+            features.append(float(value))
+        except (TypeError, ValueError) as exc:
+            raise ValueError(f"Feature '{column}' must be numeric") from exc
 
     label: str = str(model.predict([features])[0])
+    probabilities: list[float] = model.predict_proba([features])[0]
+    prob_dict: dict[str, float] = dict(
+        zip(model.classes_.tolist(), probabilities.tolist(), strict=False)
+    )
+    LOG.info(f"Predicted probabilities: {prob_dict} for features: {features}")
     LOG.info(f"Predicted label: {label} for features: {features}")
-    return {"prediction": label}
+    return {
+        "prediction": label,
+        "confidence": prob_dict[label],
+        "probabilities": prob_dict,
+    }
 
 
-@app.post("/predict")
+@app.post("/predict", status_code=status.HTTP_200_OK)
 def predict(payload: dict[str, Any]) -> dict[str, Any]:
     try:
         return predict_from_features(MODEL, payload)
     except ValueError as exc:
-        raise HTTPException(status_code=400, detail=str(exc)) from exc
+        raise HTTPException(
+            status_code=status.HTTP_422_UNPROCESSABLE_CONTENT,
+            detail=str(exc),
+        ) from exc
+    except Exception as exc:
+        LOG.exception("Unexpected prediction error")
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="Internal server error",
+        ) from exc
