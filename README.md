@@ -59,59 +59,12 @@ This is how serving a trained model works:
 train once, save once, load once at startup,
 then predict on every incoming request.
 
-## Example Notebook + Your Notebook
-
-Keep the example notebook as it is.
-Either copy it or use it to build a new notebook that ends in \_yourname.
-See [docs/your-files.md](docs/your-files.md) for more.
-
+## Example Notebook
 Links:
 
 - [ml_06_case.ipynb](notebooks/ml_06_case.ipynb)
 
-## Working Files
 
-You'll work with these areas:
-
-- **data/raw** - raw data for exploration (only if you add a dataset)
-- **docs/** - project narrative and documentation
-- **src/mlstudio/** - the app is an example; run only (no need to modify)
-- **notebooks/** - interactive analysis
-- **pyproject.toml** - update authorship & links
-- **zensical.toml** - update authorship & links
-
-## Instructions (pro-analytics-02)
-
-Follow the
-[step-by-step workflow guide](https://denisecase.github.io/pro-analytics-02/workflow-b-apply-example-project/)
-to complete:
-
-1. Phase 1. **Start & Run**
-2. Phase 2. **Change Authorship**
-3. Phase 3. **Read & Understand**
-4. Phase 4. **Modify**
-5. Phase 5. **Apply**
-
-## Challenges
-
-Challenges are expected.
-Sometimes instructions may not quite match your operating system.
-When issues occur, share screenshots, error messages, and details about what you tried.
-Working through issues is part of implementing professional projects.
-
-## Success
-
-After completing Phase 1. **Start & Run**, you'll have your own GitHub project,
-with the example notebook executed and committed,
-and running the example module will print out:
-
-```shell
-========================
-Executed successfully!
-========================
-```
-
-A new file `project.log` will appear in the root project folder.
 
 ## Command Reference
 
@@ -125,7 +78,7 @@ open a machine terminal in your `Repos` folder:
 
 ```shell
 # Replace username with YOUR GitHub username.
-git clone https://github.com/username/ml-06-serving
+git clone https://github.com/ajaneh/ml-06-serving
 
 cd ml-06-serving
 code .
@@ -162,6 +115,13 @@ uv run python -m mlstudio.model_builder_case
 # train your custom model and save it to artifacts/model_yourname.joblib
 # uv run python -m mlstudio.model_builder_yourname
 
+#In a new terminal, serve the api
+uv run fastapi dev src/mlstudio/serve_alex.py
+
+#Follow visual intructions below to test it out
+
+#Ctrl+C to cancel server instance when finished
+
 # run common chores
 uv run ruff format .
 uv run ruff check . --fix
@@ -177,50 +137,20 @@ git push -u origin main
 
 </details>
 
-## Notes
 
-- Use the **UP ARROW** and **DOWN ARROW** in the terminal to scroll through past commands.
-- Use `CTRL+f` to find (and replace) text within a file.
-- You do not need to add to or modify `tests/`. They are provided for example only.
-- Many files are silent helpers. Explore as you like, but nothing is required.
-- You do NOT need to understand everything; understanding builds naturally over time.
-
-## Troubleshooting >>>
-
-If you see something like this in your terminal: `>>>` or `...`
-You accidentally started Python interactive mode.
-It happens.
-Press `Ctrl+c` (both keys together) or `Ctrl+Z` then `Enter` on Windows.
-
-## Example Output (Can Remove this Section after You Verify)
-
+## Alternative Test Route
+-Download postman
+-POST to `http://127.0.0.1:8000/predict`
+-Clear parameters
+-Edit body to accept RAW and return JSON
+-Copy paste the following to test:
 ```shell
-| INFO | MB | Load data.................
-| INFO | MB | Loading dataset: penguins
-| INFO | MB | Loaded: 344 rows, 7 columns
-| INFO | MB | Model rows (after dropping missing): 342
-| INFO | MB | Split data................
-| INFO | MB | Train instances: 273
-| INFO | MB | Test instances:  69
-| INFO | MB | Train model...............
-| INFO | MB | Training RandomForestClassifier on 273 instances
-| INFO | MB | Training complete
-| INFO | MB | Evaluate model............
-| INFO | MB | Test accuracy: 1.000
-| INFO | MB | Save model................
-| INFO | MB | Saved model to: artifacts\model.joblib
-| INFO | MB | Summarize.................
-| INFO | MB | ========================
-| INFO | MB | SUMMARY
-| INFO | MB | ========================
-| INFO | MB | Dataset:  penguins
-| INFO | MB | Target:   species
-| INFO | MB | Features: ['bill_length_mm', 'bill_depth_mm', 'flipper_length_mm', 'body_mass_g']
-| INFO | MB | Artifact: artifacts\model.joblib
-| INFO | MB | ========================
-| INFO | MB | ========================
-| INFO | MB | Executed successfully!
-| INFO | MB | ========================
+ {
+  "bill_length_mm": 39.1,
+  "bill_depth_mm": 18.7,
+  "flipper_length_mm": 181,
+  "body_mass_g": 3750
+}
 ```
 
 ## Terminal 2: Right-click and Rename "server"
