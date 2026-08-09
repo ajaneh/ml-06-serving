@@ -110,10 +110,6 @@ uv run python -m mlstudio.app_case
 # TASK 1: train the example model and save it to artifacts/model.joblib.
 uv run python -m mlstudio.model_builder_case
 
-# CUSTOM: After completing your custom project,
-# Add the command to
-# train your custom model and save it to artifacts/model_yourname.joblib
-# uv run python -m mlstudio.model_builder_yourname
 
 #In a new terminal, serve the api
 uv run fastapi dev src/mlstudio/serve_alex.py
@@ -153,196 +149,30 @@ git push -u origin main
 }
 ```
 
-## Terminal 2: Right-click and Rename "server"
-
-Open a second terminal. Right-click to rename this terminal "server".
-
-Run:
-
-```shell
-# Task 2. Start the example server
-uv run fastapi dev src/mlstudio/serve_case.py
-```
-
-Keep this terminal open.
-You should see the following which
-means it is ready to receive requests:
-
-```text
-
-   FastAPI   Starting development server 🚀
-
-             Searching for package file structure from directories with __init__.py files
-| INFO | M06 | === RUN START ===
-| INFO | M06 | project=M06
-| INFO | M06 | repo_dir=ml-06-serving
-| INFO | M06 | python=3.14.0
-| INFO | M06 | os=Windows 11
-| INFO | M06 | shell=powershell
-| INFO | M06 | cwd=.
-| INFO | M06 | github_actions=False
-| INFO | M06 | Loading model from: artifacts\model.joblib
-| INFO | M06 | Model loaded successfully
-             Importing from C:\Repos\ml\ml-06-serving\src
-
-    module   📁 mlstudio
-             ├── 🐍 __init__.py
-             └── 🐍 serve_case.py
-
-      code   Importing the FastAPI app object from the module with the following code:
-
-             from mlstudio.serve_case import app
-
-       app   Using import string: mlstudio.serve_case:app
-
-    server   Server started at http://127.0.0.1:8000
-    server   Documentation at http://127.0.0.1:8000/docs
-
-       tip   Running in development mode, for production use: fastapi run
-
-             Logs:
-
-      INFO   Will watch for changes in these directories: ['C:\\Repos\\ml\\ml-06-serving']
-      INFO   Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
-      INFO   Started reloader process [31516] using WatchFiles
-| INFO | M06 | === RUN START ===
-| INFO | M06 | project=M06
-| INFO | M06 | repo_dir=ml-06-serving
-| INFO | M06 | python=3.14.0
-| INFO | M06 | os=Windows 11
-| INFO | M06 | shell=powershell
-| INFO | M06 | cwd=.
-| INFO | M06 | github_actions=False
-| INFO | M06 | Loading model from: artifacts\model.joblib
-| INFO | M06 | Model loaded successfully
-      INFO   Started server process [10012]
-      INFO   Waiting for application startup.
-      INFO   Application startup complete.
-```
-
-## Terminal 3: Right-click and Rename "client"
-
-Open a third terminal.
-Right-click and rename it "client".
-
-Use this terminal to **send a request** to the server.
-
-We are making a request to the "/predict" endpoint.
-
-Provide information about a penguin and ask
-for the predicted species.
-
-Line continuation characters for long commands are different by operating system.
-
-- PowerShell uses a backtick.
-- Bash and zsh use a back slash
-
-The `curl` command means "check url".
-
-- X defines the type of request
-- H provides the requested response format (json data)
-- d provides a json object (a penguin where we want to get the species)
-
-### Windows PowerShell
-
-```shell
-# Task 3. Send a request to the server
-
-curl -X POST http://127.0.0.1:8000/predict `
-     -H "Content-Type: application/json" `
-     -d '{"bill_length_mm": 39.1, "bill_depth_mm": 18.7, "flipper_length_mm": 181, "body_mass_g": 3750}'
-```
-
-### macOS / Linux
-
-```shell
-# Task 3. Send a request to the server
-
-curl -X POST http://127.0.0.1:8000/predict \
-     -H "Content-Type: application/json" \
-     -d '{"bill_length_mm": 39.1, "bill_depth_mm": 18.7, "flipper_length_mm": 181, "body_mass_g": 3750}'
-```
-
-Should return the predicted result as JSON data:
-
-```json
-{ "prediction": "Adelie" }
-```
-
-Try sending some slightly different data - does it change the prediction?
-Study the data.
-Try to create a request that will answer with each of three different species (Adelie, Chinstrap, Gentoo)
-
 ## Try a Web-based ML Penguin Predictor on Render
 
-Render hosts your ML model for free.
-It is easy to set up, but they require a credit card (even for the free options).
-The machines sleep so it can take a minute to wake up and answer.
-See the docs/ for more.
-
-Customize the request to see what species is predicted:
 
 ```shell
 # PowerShell
-curl -X POST https://ml-penguin-predictor.onrender.com/predict `
+curl -X POST https://ml-06-serving.onrender.com/predict
      -H "Content-Type: application/json" `
      -d '{"bill_length_mm": 39.1, "bill_depth_mm": 18.7, "flipper_length_mm": 181, "body_mass_g": 3750}'
 
-# macOS / Linux
-curl -X POST https://ml-penguin-predictor.onrender.com/predict \
-     -H "Content-Type: application/json" \
-     -d '{"bill_length_mm": 39.1, "bill_depth_mm": 18.7, "flipper_length_mm": 181, "body_mass_g": 3750}'
 ```
 
-## Try a Web-based ML Penguin Predictor on HuggingFace
 
-HuggingFace also hosts your ML model for free.
-It is a bit harder to set up (they use their own repo and we upload files via the browser).
-No credit card is required.
-See the docs/ for more.
-
-Customize the request to see what species is predicted:
-
-```shell
-# PowerShell
-curl -X POST https://denisecase-ml-penguin-predictor.hf.space/predict `
-     -H "Content-Type: application/json" `
-     -d '{"bill_length_mm": 39.1, "bill_depth_mm": 18.7, "flipper_length_mm": 181, "body_mass_g": 3750}'
-
-# macOS / Linux
-curl -X POST https://denisecase-ml-penguin-predictor.hf.space/predict \
-     -H "Content-Type: application/json" \
-     -d '{"bill_length_mm": 39.1, "bill_depth_mm": 18.7, "flipper_length_mm": 181, "body_mass_g": 3750}'
-```
 
 ## Findings and Visuals
 
-Take screenshots of your charts and provide them here with a discussion.
-In Markdown, display a figure by using:
-an exclamation mark immediately followed by square brackets containing a useful caption
-immediately followed by parentheses containing the relative path to your figure.
-Note: When you start typing the path with a dot (.) for "here, in this directory",
-the IDE may help complete the path.
+Project was hosted on Render
+![Render](https://github.com/ajaneh/ml-06-serving/blob/main/docs/images/Screenshot%202026-08-09%2014.31.36.png?raw=true)
 
-In your custom project, follow this example, but
+![Custom Error](https://github.com/ajaneh/ml-06-serving/blob/main/docs/images/Screenshot%202026-08-09%2014.33.37.png?raw=true)
+Returns 422 and detail if the request is bad
+![Detailed Errors](https://github.com/ajaneh/ml-06-serving/blob/main/docs/images/Screenshot%202026-08-09%2014.27.46.png?raw=true)
 
-- your figures and narrative should reflect your work,
-- this `README.md` should include your commands, process, and visuals, and
-- `docs/index.md` should include your narrative.
-
-Remove unnecessary instructional comments in your custom files.
-
-Update figures to present interesting results from your custom project:
-
-![Provide a Useful Caption](./docs/images/Figure_1.png)
-
-![Provide a Useful Caption](./docs/images/Figure_2.png)
-
-## Project Documentation
-
-Additional project instructions, terms, and notes:
-
-[docs/index.md](docs/index.md)
+![Probability Added](https://github.com/ajaneh/ml-06-serving/blob/main/docs/images/Screenshot%202026-08-09%2014.34.13.png?raw=true)
+Predictions now come with model probability 
 
 ## Citation
 
